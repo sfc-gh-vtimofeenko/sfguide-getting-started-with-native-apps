@@ -1,3 +1,9 @@
+# This will:
+# - Stop script upon encountering an error (-e)
+# - Error out on unknown variables
+# - Fail if a command in a pipeline fails
+set -euo pipefail
+
 snow sql -q "CREATE OR REPLACE WAREHOUSE NATIVE_APP_QUICKSTART_WH WAREHOUSE_SIZE=SMALL INITIALLY_SUSPENDED=TRUE;
 
 -- this database is used to store our data
